@@ -1,0 +1,32 @@
+<!--
+Build an HTML page that displays the Hello World! text in color that changes cyclically between black,
+blue, and green every one second.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 1</title>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                const colors = ['black', 'blue','green']
+                let x = 0;
+
+                function changeColor(){
+                    $('#msg').css('color',colors[x]);
+                    x = (x + 1) % colors.length;
+
+                }
+                
+                setInterval(changeColor,1000);
+
+            });
+           
+        </script>
+    </head>
+    <body>
+        <h1 id="msg">Hello World</h1> 
+    </body>
+</html>
